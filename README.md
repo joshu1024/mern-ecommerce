@@ -207,7 +207,7 @@ Table views for all collections (Users, Orders, Products)
 Edit/Delete buttons with modal confirmations
 
 🎥 Live Demo & Screenshots
-🌐 Live Demo
+🌐 Live Demo -> https://mern-ecommerce-26w1-git-main-joes-projects-50075601.vercel.app/
 
 🛍️ Frontend (Vercel) → [https://mern-ecommerce.vercel.app](https://mern-ecommerce-26w1-git-main-joes-projects-50075601.vercel.app/)
 
@@ -225,16 +225,13 @@ Showcases featured products with a responsive slider, category filters, and quic
 
 
 👟 Product Details
-
 Displays detailed product info, multiple images, and an “Add to Cart” button with quantity selector.
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a60c09a5-7133-483c-8080-84081f1f3473" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b778b32-327b-44e2-a031-f5874a68dde4" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4471e168-2ab3-4d36-bd49-1353694b737e" />
 
 
 🛒 Shopping Cart & Checkout
-
 Secure checkout with dynamic cart totals, order summary, and PayPal payment integration.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/906d7e39-9383-4523-b139-7da10183bae7" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3efdc162-5dfb-410b-8c50-3b30a63e04f0" />
