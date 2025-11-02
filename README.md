@@ -246,6 +246,20 @@ Real-time visualizations for sales, users, and revenue using Recharts and MongoD
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b43b53a2-a800-4588-b59b-5d455e0a475a" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6fbea047-5cce-4cf2-b14b-d01eac94e56e" />
 
+🧑‍💼 Demo Admin Login (add this block)
+### 🧑‍💼 Demo Admin Login
+
+Use the following credentials to explore the Admin Dashboard:
+
+
+
+Email: iamAdmin@gmail.com
+
+Password: 123456
+
+
+> ⚠️ *Demo-only account for portfolio showcase. Do not use these credentials in production environ
+
 ⚙️ Tech Architecture
 
 Backend on Render + Frontend on Vercel, communicating via RESTful APIs and JWT authentication.
