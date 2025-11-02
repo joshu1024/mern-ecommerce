@@ -9,8 +9,9 @@ const NewProduct = () => {
   const [brand, setBrand] = useState("");
   const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
-  const navigate = useNavigate();
   const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
