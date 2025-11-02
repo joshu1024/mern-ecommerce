@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 export const fetchProducts = createAsyncThunk(
@@ -30,7 +31,8 @@ export const deleteProduct = createAsyncThunk(
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      return id; // return the deleted product's ID so we can remove it from Redux state
+      return id;
+      toast.success("Product deleted successfully");
     } catch (err) {
       return rejectWithValue(
         err.response?.data?.message || "Failed to delete product"
