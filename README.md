@@ -222,27 +222,28 @@ Showcases featured products with a responsive slider, category filters, and quic
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1aa2eaf-994d-444d-acda-08d4713f688e" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/53f44390-0a13-4dce-91cb-f46516cb22c5" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ba5fb32e-0ffb-4ea2-b897-3d22d9cf94e8" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a60c09a5-7133-483c-8080-84081f1f3473" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b778b32-327b-44e2-a031-f5874a68dde4" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4471e168-2ab3-4d36-bd49-1353694b737e" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/906d7e39-9383-4523-b139-7da10183bae7" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3efdc162-5dfb-410b-8c50-3b30a63e04f0" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ea11f694-9e96-4e48-8dc5-0fd1de661eba" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/33fd0c5c-0d17-4a2f-89eb-d9c636808c4c" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f3b7a543-caa8-4075-98c2-007db948ff35" />
+
+
 
 
 
 👟 Product Details
 
 Displays detailed product info, multiple images, and an “Add to Cart” button with quantity selector.
-🖼️ Screenshot:
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a60c09a5-7133-483c-8080-84081f1f3473" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b778b32-327b-44e2-a031-f5874a68dde4" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4471e168-2ab3-4d36-bd49-1353694b737e" />
 
 
 🛒 Shopping Cart & Checkout
 
 Secure checkout with dynamic cart totals, order summary, and PayPal payment integration.
-🖼️ Screenshot:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/906d7e39-9383-4523-b139-7da10183bae7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3efdc162-5dfb-410b-8c50-3b30a63e04f0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ea11f694-9e96-4e48-8dc5-0fd1de661eba" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/33fd0c5c-0d17-4a2f-89eb-d9c636808c4c" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f3b7a543-caa8-4075-98c2-007db948ff35" />
 
 
 🔐 User Authentication
@@ -252,14 +253,9 @@ JWT-based login and registration with validation and protected routes.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b8bca4bc-a492-4ab7-bab2-fac4d07066b4" />
 
 
-🧑‍💼 Admin Dashboard
+🧑‍💼 Admin Dashboard and 📊 Analytics
 
 A fully functional admin panel that gives control over products, users, and orders — complete with charts and tables.
-🖼️ Screenshot:
-
-
-📊 Analytics
-
 Real-time visualizations for sales, users, and revenue using Recharts and MongoDB aggregation.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/548b0d88-f0d9-460b-9057-887732f676f1" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c4f7a0d-9819-41d0-a36e-6b9cbe85588d" />
@@ -268,13 +264,9 @@ Real-time visualizations for sales, users, and revenue using Recharts and MongoD
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b43b53a2-a800-4588-b59b-5d455e0a475a" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6fbea047-5cce-4cf2-b14b-d01eac94e56e" />
 
-
-
 ⚙️ Tech Architecture
 
 Backend on Render + Frontend on Vercel, communicating via RESTful APIs and JWT authentication.
-🖼️ Screenshot:
-
 
 🧑‍💻 Author
 
