@@ -4,6 +4,17 @@ A full-stack E-Commerce web application built using the MERN stack (MongoDB, Exp
 
 This project delivers a complete online shopping experience — including secure authentication, product management, cart and checkout flow, PayPal payment integration, and an advanced Admin Dashboard for managing users, orders, and products in real-time.
 
+## 📘 Table of Contents
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation & Setup](#️-installation--setup)
+- [Deployment Guide](#-deployment-guide)
+- [Folder Structure](#-folder-structure)
+- [Admin Dashboard Preview](#-admin-dashboard-preview)
+- [Live Demo](#-live-demo)
+- [Author](#-author)
+- [Acknowledgements](#-acknowledgements)
+
 🚀 Features
 🛍️ User Features
 
@@ -284,3 +295,8 @@ Vite + React Ecosystem
 Render & Vercel Docs
 
 💡 If you found this project helpful, please give it a ⭐ on GitHub! It helps others discover it.
+![License](https://img.shields.io/github/license/joshu1024/mern-ecommerce)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node](https://img.shields.io/badge/Backend-Node.js-green)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+
