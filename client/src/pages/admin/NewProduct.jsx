@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const NewProduct = () => {
   const [name, setName] = useState("");
@@ -31,7 +32,7 @@ const NewProduct = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-
+      toast.success("Product created successfully");
       navigate("/admin/products");
     } catch (err) {
       console.error(err);
