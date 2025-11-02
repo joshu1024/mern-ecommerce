@@ -138,8 +138,7 @@ Render URL example:
 
 https://mern-ecommerce-server.onrender.com
 
-🌐 Deploy Frontend on Vercel 
-🅰️ Vercel
+🌐 Deploy Frontend on 🅰️ Vercel
 
 Go to Vercel
 
