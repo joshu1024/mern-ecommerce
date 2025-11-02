@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const HeroSlider = ({ slides, navigate }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,7 +23,7 @@ const HeroSlider = ({ slides, navigate }) => {
           alt="Sneaker"
         />
         <button
-          onClick={() => navigate(`${BASE_URL}/products`)}
+          onClick={() => navigate("/products")}
           className="absolute bottom-10 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all"
         >
           Shop Now

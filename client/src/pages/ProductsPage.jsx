@@ -7,11 +7,12 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4000/api/products");
+        const { data } = await axios.get(`${BASE_URL}/api/products`);
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -72,7 +73,7 @@ const ProductsPage = () => {
                 product?.images?.length
                   ? product.images[0].startsWith("http")
                     ? product.images[0]
-                    : `http://localhost:4000/${
+                    : `${BASE_URL}/${
                         product.images[0].startsWith("/")
                           ? product.images[0].slice(1)
                           : product.images[0]
