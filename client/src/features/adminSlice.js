@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// ✅ Thunk to fetch dashboard data
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 export const fetchAdminStats = createAsyncThunk(
   "admin/fetchStats",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get("http://localhost:4000/api/admin/dashboard", {
+      const res = await axios.get(`${BASE_URL}/api/admin/dashboard`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // if you use admin JWT
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       return res.data;

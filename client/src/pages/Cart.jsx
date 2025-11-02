@@ -9,13 +9,13 @@ import {
 import { CircularProgress, Button } from "@mui/material";
 import toast from "react-hot-toast";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const BASE_URL = "http://localhost:4000";
 
 const getImageUrl = (image) => {
   if (!image) return "/placeholder.jpg";
   return image.startsWith("http")
     ? image
-    : `${API_BASE_URL}/${image.startsWith("/") ? image.slice(1) : image}`;
+    : `${BASE_URL}/${image.startsWith("/") ? image.slice(1) : image}`;
 };
 
 const Cart = () => {

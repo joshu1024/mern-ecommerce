@@ -6,7 +6,7 @@ import { addToCartAsync } from "../features/cartSlice.js";
 import toast from "react-hot-toast";
 import { IoArrowBack } from "react-icons/io5";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
 const CategoryPage = () => {
   const { name } = useParams();
@@ -21,7 +21,7 @@ const CategoryPage = () => {
     if (!imagePath) return "/placeholder.jpg";
     return imagePath.startsWith("http")
       ? imagePath
-      : `${API_BASE_URL}/${
+      : `${BASE_URL}/${
           imagePath.startsWith("/") ? imagePath.slice(1) : imagePath
         }`;
   };
@@ -31,7 +31,7 @@ const CategoryPage = () => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          `${API_BASE_URL}/api/products/category/${name}`
+          `${BASE_URL}/api/products/category/${name}`
         );
         setProducts(res.data);
       } catch (error) {

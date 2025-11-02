@@ -10,6 +10,8 @@ const Checkout = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+
   const initialOptions = {
     "client-id":
       "AVhcnD3RpwZcOKS-AA8jpS_FuzRgVnj25RtZ-eNtafl8mpNFhpru97SCVE5xJ05wD6PpDIkR1neYNVO6", // 👈 your sandbox client ID
@@ -17,22 +19,16 @@ const Checkout = () => {
   };
 
   const handleCreateOrder = async ({ total }) => {
-    const { data } = await axios.post(
-      "http://localhost:4000/api/paypal/create-order",
-      {
-        amount: total,
-      }
-    );
+    const { data } = await axios.post(`${BASE_URL}/api/paypal/create-order`, {
+      amount: total,
+    });
     return data.id; // 👈 PayPal needs this
   };
 
   const handleApprove = async (data, actions) => {
-    const response = await axios.post(
-      "http://localhost:4000/api/paypal/capture-order",
-      {
-        orderID: data.orderID,
-      }
-    );
+    const response = await axios.post(`${BASE_URL}/api/paypal/capture-order`, {
+      orderID: data.orderID,
+    });
     alert("Payment successful!");
     console.log(response.data);
   };
@@ -72,7 +68,7 @@ const Checkout = () => {
           <PayPalButtons
             style={{ layout: "vertical" }}
             createOrder={(data, actions) => {
-              return fetch("http://localhost:4000/api/paypal/create-order", {
+              return fetch(`${BASE_URL}/api/paypal/create-order`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ amount: totalPrice }), // ✅ FIXED
@@ -85,7 +81,7 @@ const Checkout = () => {
             }}
             onApprove={(data, actions) => {
               return fetch(
-                `http://localhost:4000/api/paypal/capture-order/${data.orderID}`,
+                `${BASE_URL}/api/paypal/capture-order/${data.orderID}`,
                 { method: "POST" }
               )
                 .then((res) => res.json())

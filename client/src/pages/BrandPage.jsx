@@ -13,12 +13,12 @@ const BrandPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/products/brand/${name}`
+          `${BASE_URL}/api/products/brand/${encodeURIComponent(name)}`
         );
         setProducts(res.data);
       } catch (error) {
@@ -65,7 +65,7 @@ const BrandPage = () => {
                   product.images?.length
                     ? product.images[0].startsWith("http")
                       ? product.images[0]
-                      : `http://localhost:4000/${
+                      : `${BASE_URL}/${
                           product.images[0].startsWith("/")
                             ? product.images[0].slice(1)
                             : product.images[0]

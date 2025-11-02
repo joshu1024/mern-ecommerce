@@ -3,20 +3,20 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const API_URL = "http://localhost:4000/api/cart";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
-const addToCartAsync = createAsyncThunk(
+// 🛒 Add to Cart
+export const addToCartAsync = createAsyncThunk(
   "cart/addToCart",
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        `${API_URL}/addToCart`,
-        { productId, quantity }, // ✅ removed user
+        `${BASE_URL}/api/cart/addToCart`,
+        { productId, quantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       return response.data.cart;
-      console.log(response.data);
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
     }
@@ -24,12 +24,12 @@ const addToCartAsync = createAsyncThunk(
 );
 
 // 🟡 Fetch cart from backend
-const fetchCart = createAsyncThunk(
+export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async (_, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`${API_URL}/getCart`, {
+      const response = await axios.get(`${BASE_URL}/api/cart/getCart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return response.data.cart;
@@ -38,12 +38,14 @@ const fetchCart = createAsyncThunk(
     }
   }
 );
+
+// ❌ Clear cart
 export const clearCartAsync = createAsyncThunk(
   "cart/clearCart",
   async (_, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.delete(`${API_URL}/clearCart`, {
+      const response = await axios.delete(`${BASE_URL}/api/cart/clearCart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return response.data.cart;
@@ -52,9 +54,8 @@ export const clearCartAsync = createAsyncThunk(
     }
   }
 );
-// features/cartSlice.js
 
-// ✅ Checkout thunk
+// ✅ Checkout
 export const checkoutCart = createAsyncThunk(
   "cart/checkoutCart",
   async (_, { getState, rejectWithValue }) => {
@@ -66,12 +67,16 @@ export const checkoutCart = createAsyncThunk(
         price: item.productId?.newPrice,
         quantity: item.quantity,
       }));
+
       const total = cart.totalPrice;
 
-      const { data } = await axios.post("http://localhost:4000/api/order", {
-        items,
-        total,
-      });
+      const token = localStorage.getItem("token");
+
+      const { data } = await axios.post(
+        `${BASE_URL}/api/order`,
+        { items, total },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
 
       return data;
     } catch (error) {
@@ -94,8 +99,7 @@ const saveCart = (items) => {
   localStorage.setItem("cartItems", JSON.stringify(items));
 };
 
-// 💰 Calculate total price (if prices exist)
-// OLD (Incorrect)
+// 💰 Calculate total price
 const calculateTotal = (items) => {
   return items.reduce(
     (sum, item) =>
@@ -133,7 +137,6 @@ const cartSlice = createSlice({
         state.totalPrice = calculateTotal(state.items);
         saveCart(state.items);
       })
-
       .addCase(addToCartAsync.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
@@ -152,5 +155,4 @@ const cartSlice = createSlice({
 });
 
 export const { removeFromCart, clearCart } = cartSlice.actions;
-export { addToCartAsync, fetchCart };
 export default cartSlice.reducer;

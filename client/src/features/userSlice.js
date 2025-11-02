@@ -3,13 +3,13 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const API_URL = `http://localhost:4000/api/user`;
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
 export const registerUser = createAsyncThunk(
   "user/register",
   async (userData, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API_URL}/register`, userData);
+      const res = await axios.post(`${BASE_URL}/api/user/register`, userData);
       return res.data;
     } catch (error) {
       return rejectWithValue(
@@ -23,7 +23,7 @@ export const loginUser = createAsyncThunk(
   "user/login",
   async (userData, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API_URL}/login`, userData, {
+      const res = await axios.post(`${BASE_URL}/api/user/login`, userData, {
         withCredentials: true,
       });
 
@@ -46,7 +46,7 @@ export const logOutUser = createAsyncThunk(
   "user/logout",
   async (_, { rejectWithValue }) => {
     try {
-      await axios.get(`${API_URL}/logout`);
+      await axios.get(`${BASE_URL}/api/user/logout`);
     } catch (error) {
       return rejectWithValue("Could not log out user");
     }

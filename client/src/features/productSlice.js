@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// ✅ Fetch all products
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 export const fetchProducts = createAsyncThunk(
   "products/fetchAll",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get("http://localhost:4000/api/admin/products", {
+      const res = await axios.get(`${BASE_URL}/api/admin/products`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -25,7 +25,7 @@ export const deleteProduct = createAsyncThunk(
   "products/delete",
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:4000/api/admin/products/${id}`, {
+      await axios.delete(`${BASE_URL}/api/admin/products/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
