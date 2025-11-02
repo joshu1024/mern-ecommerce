@@ -224,9 +224,6 @@ Showcases featured products with a responsive slider, category filters, and quic
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ba5fb32e-0ffb-4ea2-b897-3d22d9cf94e8" />
 
 
-
-
-
 👟 Product Details
 
 Displays detailed product info, multiple images, and an “Add to Cart” button with quantity selector.
