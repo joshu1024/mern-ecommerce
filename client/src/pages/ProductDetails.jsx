@@ -6,16 +6,16 @@ import { addToCartAsync } from "../features/cartSlice.js";
 import toast from "react-hot-toast";
 
 const ProductDetails = () => {
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await axios.get(`${BASE_URL}/product/${id}`);
+        const { data } = await axios.get(`${BASE_URL}/api/product/${id}`);
         setProduct(data);
       } catch (error) {
         console.error("Error fetching product:", error);
