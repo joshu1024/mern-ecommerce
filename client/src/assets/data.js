@@ -151,7 +151,7 @@ export const categories = [
   { image: kid, category: "Kids" },
 ];
 export const brands = [
-  { image: nikeLogo, brand: "nike" },
-  { image: adidasLogo, brand: "adidas" },
-  { image: pumaLogo, brand: "puma" },
+  { image: nikeLogo, brand: "Nike" },
+  { image: adidasLogo, brand: "Adidas" },
+  { image: pumaLogo, brand: "Puma" },
 ];
