@@ -6,14 +6,14 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch all users
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/admin/users", {
+      const res = await axios.get(`${BASE_URL}/api/admin/users`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -29,7 +29,7 @@ const Users = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await axios.delete(`http://localhost:4000/api/admin/users/${id}`, {
+      await axios.delete(`${BASE_URL}/api/admin/users/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -47,7 +47,7 @@ const Users = () => {
     const newRole = user.role === "admin" ? "user" : "admin";
     try {
       await axios.put(
-        `http://localhost:4000/api/admin/users/${user._id}`,
+        `${BASE_URL}/api/admin/users/${user._id}`,
         { role: newRole },
         {
           headers: {
@@ -65,7 +65,6 @@ const Users = () => {
     }
   };
 
-  // Filter users by name or email
   const filteredUsers = users.filter(
     (u) =>
       (u.name?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false) ||

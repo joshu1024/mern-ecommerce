@@ -10,7 +10,7 @@ const NewProduct = () => {
   const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
-
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,7 +24,7 @@ const NewProduct = () => {
         formData.append("images", images[i]);
       }
 
-      await axios.post("http://localhost:4000/api/products/add", formData, {
+      await axios.post(`${BASE_URL}/api/products/add`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
