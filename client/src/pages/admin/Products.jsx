@@ -7,6 +7,7 @@ const Products = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { products, loading, error } = useSelector((state) => state.products);
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -60,7 +61,7 @@ const Products = () => {
                         src={
                           product.images[0].startsWith("http")
                             ? product.images[0]
-                            : `http://localhost:4000/${product.images[0]}`
+                            : `${BASE_URL}/${product.images[0]}`
                         }
                         alt={product.name}
                         className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded"

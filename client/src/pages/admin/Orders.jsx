@@ -6,7 +6,7 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
   useEffect(() => {
     fetchOrders();
@@ -15,7 +15,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${API_URL}/api/admin/orders`);
+      const res = await axios.get(`${BASE_URL}/api/admin/orders`);
       setOrders(res.data);
       setLoading(false);
     } catch (err) {
@@ -28,7 +28,7 @@ const Orders = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
     try {
-      await axios.delete(`${API_URL}/api/admin/orders/${id}`);
+      await axios.delete(`${BASE_URL}/api/admin/orders/${id}`);
       setOrders((prev) => prev.filter((order) => order._id !== id));
       alert("Order deleted successfully");
     } catch (err) {
@@ -39,7 +39,7 @@ const Orders = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await axios.put(`${API_URL}/api/admin/orders/${id}`, {
+      await axios.put(`${BASE_URL}/api/admin/orders/${id}`, {
         status: newStatus,
       });
       setOrders((prev) =>
