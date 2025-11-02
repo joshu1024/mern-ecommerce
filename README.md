@@ -5,6 +5,7 @@ A full-stack E-Commerce web application built using the MERN stack (MongoDB, Exp
 This project delivers a complete online shopping experience — including secure authentication, product management, cart and checkout flow, PayPal payment integration, and an advanced Admin Dashboard for managing users, orders, and products in real-time.
 
 ## 📘 Table of Contents
+## 📘 Table of Contents
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Installation & Setup](#️-installation--setup)
@@ -14,7 +15,7 @@ This project delivers a complete online shopping experience — including secure
 - [Live Demo](#-live-demo)
 - [Author](#-author)
 - [Acknowledgements](#-acknowledgements)
-
+- 
 🚀 Features
 🛍️ User Features
 
