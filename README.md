@@ -138,7 +138,7 @@ Render URL example:
 
 https://mern-ecommerce-server.onrender.com
 
-🌐 Deploy Frontend on Vercel / Netlify
+🌐 Deploy Frontend on Vercel 
 🅰️ Vercel
 
 Go to Vercel
@@ -154,22 +154,8 @@ VITE_API_BASE_URL=https://mern-ecommerce-server.onrender.com
 
 Deploy 🎉
 Example:
-https://mern-ecommerce.vercel.app
+mern-ecommerce-26w1.vercel.app
 
-🅱️ Netlify
-
-Import repo from GitHub
-
-Build command: npm run build
-
-Publish directory: client/dist
-
-Add:
-
-VITE_API_BASE_URL=https://mern-ecommerce-server.onrender.com
-
-
-Deploy 🚀
 
 📂 Folder Structure
 mern-ecommerce/
@@ -180,7 +166,9 @@ mern-ecommerce/
 │   │   ├── features/         # Redux slices (cart, product, user, etc.)
 │   │   ├── components/       # Reusable UI components
 │   │   ├── pages/            # Home, Product, Cart, Checkout, Admin pages
-│   │   └── assets/
+│   │   └── assets/           # Images, data.js
+|   |   |__ layout/           # AdminLayout
+|   |    ├── assets/          # images/ ,data.js    
 │   ├── public/
 │   └── vite.config.js
 │
